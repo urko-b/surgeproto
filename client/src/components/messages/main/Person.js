@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function Person(props) {
 

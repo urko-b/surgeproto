@@ -9,7 +9,7 @@ import * as web3 from '@solana/web3.js';
 import * as buffer from "buffer";
 
 import UserContext from '../common/UserContext';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 
 // const transfer = async () => {

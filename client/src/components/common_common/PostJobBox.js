@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import UserContext from '../common/UserContext';
 import { useNavigate } from 'react-router-dom';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 // import { Link } from 'react-router-dom'
 
 function PostJobBox() {

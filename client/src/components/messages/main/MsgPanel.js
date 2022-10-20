@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Link } from 'react-router-dom'
 import MsgItem from './MsgItem';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function MsgPanel(props) {
     const msgList = props.msgList;

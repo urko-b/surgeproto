@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import UserContext from '../common/UserContext';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function GigItem(props) {
     const userContext = useContext(UserContext);

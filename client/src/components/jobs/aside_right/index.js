@@ -10,7 +10,7 @@ import PeopleBox from '../../common_common/PeopleBox';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function AsideRight() {
 

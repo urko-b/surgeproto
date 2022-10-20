@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import Person from './Person';
 import MsgPanel from './MsgPanel';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function Messaging(props) {
 

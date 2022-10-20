@@ -5,7 +5,7 @@ import ProfileForm from '../main/ProfileForm';
 import JobTransfer from './JobTransfer';
 import GigTransfer from './GigTransfer';
 import AdminMailboxMail from './AdminMailboxMail';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function AsideRight() {
     const [jobTransferList, setJobTransferList] = useState([]);

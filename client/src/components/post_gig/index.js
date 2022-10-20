@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import JobItem from '../common_common/JobItem';
 
 import Nav from '../layout/Nav';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function PostGig() {
 

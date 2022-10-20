@@ -3,7 +3,7 @@ import axios from 'axios';
 import JobItem from '../../common_common/JobItem';
 import Slider from "react-slick";
 import { Link } from 'react-router-dom'
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function SliderBox() {
     const [jobList, setJobList] = useState([]);

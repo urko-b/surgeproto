@@ -3,7 +3,7 @@ import axios from 'axios';
 import JobItem3 from '../../common_common/JobItem3';
 import GigItem3 from '../../common_common/GigItem3';
 import ProfileForm from './ProfileForm';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function Main() {
     const [jobList, setJobList] = useState([]);

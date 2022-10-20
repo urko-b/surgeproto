@@ -8,7 +8,7 @@ import Nav from '../layout/Nav';
 import AsideLeft from './aside_left';
 import AsideRight from './aside_right';
 import Main from './main';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function GigProfile(props) {
     // const location = useLocation()

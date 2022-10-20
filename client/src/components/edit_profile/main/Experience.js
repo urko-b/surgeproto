@@ -7,7 +7,7 @@ import UserContext from '../../common/UserContext';
 import classnames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import $ from 'jquery';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function Experience(props) {
     const userContext = useContext(UserContext);

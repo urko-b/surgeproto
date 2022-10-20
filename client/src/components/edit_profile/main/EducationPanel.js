@@ -7,7 +7,7 @@ import UserContext from '../../common/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 import EducationBox from './EducationBox';
-import { API_URL } from  '../../../config/api';
+import { API_URL } from 'config';
 
 function Education(props) {
     const userContext = useContext(UserContext);
