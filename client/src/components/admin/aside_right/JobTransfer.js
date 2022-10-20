@@ -7,7 +7,7 @@ import * as web3 from '@solana/web3.js';
 import * as bs58 from "bs58";
 
 import * as buffer from "buffer";
-import { API_URL } from 'config';
+import { API_URL } from '../../../config/api';
 
 const getProvider = async () => {
     if ("solana" in window) {

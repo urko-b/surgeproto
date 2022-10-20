@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import UserContext from '../../common/UserContext';
 
 import Messaging from './Messaging';
-import { API_URL } from 'config';
+import { API_URL } from '../../../config/api';
 
 function Main() {
 

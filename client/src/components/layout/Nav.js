@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import AuthService from '../../services/auth';
 import { useNavigate } from "react-router-dom";
 import UserContext from '../common/UserContext';
-import { API_URL } from 'config';
+import { API_URL } from '../../config/api';
 
 function Nav() {
     const userContext = useContext(UserContext);

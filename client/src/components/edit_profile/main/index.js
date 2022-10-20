@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Experience from './ExperiencePanel';
 import Education from './EducationPanel';
 import UserContext from '../../common/UserContext';
-import { API_URL } from 'config';
+import { API_URL } from '../../../config/api';
 
 function Main(props) {
 

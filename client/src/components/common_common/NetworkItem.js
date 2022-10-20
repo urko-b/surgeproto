@@ -6,7 +6,7 @@ import UserContext from '../common/UserContext';
 import classnames from 'classnames';
 
 import { Link } from 'react-router-dom'
-import { API_URL } from 'config';
+import { API_URL } from '../../config/api';
 
 function NetworkItem(props) {
     console.log('this is ');

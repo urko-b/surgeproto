@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 import GigItem from '../../common_common/GigItem';
-import { API_URL } from 'config';
+import { API_URL } from '../../../config/api';
 
 function Main() {
     const [gigList, setGigList] = useState([]);

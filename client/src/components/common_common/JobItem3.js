@@ -8,7 +8,7 @@ import { Switch } from 'react-switch-input';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { API_URL } from 'config';
+import { API_URL } from '../../config/api';
 
 function JobItem3(props) {
     let navigate = useNavigate();

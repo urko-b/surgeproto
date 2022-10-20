@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 import JobItem from '../../common_common/JobItem';
-import { API_URL } from 'config';
+import { API_URL } from '../../../config/api';
 
 function Main() {
     const [jobList, setJobList] = useState([]);

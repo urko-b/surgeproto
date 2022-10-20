@@ -1,8 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./setAuthToken";
-
-const API_URL = "http://localhost:4000/api/";
+import { API_URL } from '../config/api';
 
 
 const config = {

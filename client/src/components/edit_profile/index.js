@@ -7,7 +7,7 @@ import NavNonSerch from '../layout/NavNonserch';
 import AsideLeft from './aside_left';
 import Main from './main';
 import UserContext from '../common/UserContext';
-import { API_URL } from 'config';
+import { API_URL } from '../../config/api';
 
 function EditProfile() {
     const userContext = useContext(UserContext);
