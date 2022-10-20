@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { API_URL } from  '../../../config/api';
 
 function Person(props) {
 
@@ -28,7 +29,7 @@ function Person(props) {
 
 
     const getUserProfile = async () => {
-        let response = await axios.get(`http://localhost:4000/api/userProfile/getUserProfile/${id}`, {
+        let response = await axios.get(`${API_URL}/api/userProfile/getUserProfile/${id}`, {
             id: id
         })
         let data = await response.data;

@@ -9,6 +9,7 @@ import * as web3 from '@solana/web3.js';
 import * as buffer from "buffer";
 
 import UserContext from '../common/UserContext';
+import { API_URL } from  '../../../config/api';
 
 
 // const transfer = async () => {
@@ -156,7 +157,7 @@ function JobItem(props) {
                 alert("Your wallet address does not exist!");
             } else {
                 e.preventDefault();
-                axios.post("http://localhost:4000/api/job_transfer/addInfo", {
+                axios.post(`${API_URL}/api/job_transfer/addInfo`, {
                     fromAddress: profile.walletAddress,
                     fromUsername: profile.username,
                     toAddress: props.walletAddress,
@@ -169,7 +170,7 @@ function JobItem(props) {
                         alert('Transfer Info was added!');
 
                         const id = props.id;
-                        axios.post(`http://localhost:4000/api/job/updateJob/${id}`, {
+                        axios.post(`${API_URL}/job/updateJob/${id}`, {
                             clientUsername: profile.username,
                             clientAvatar: profile.avatar,
                             contact: 'pending'
@@ -208,29 +209,29 @@ function JobItem(props) {
     const addConnection = (e) => {
 
         e.preventDefault();
-        // axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${profile._id}`, {
+        // axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${profile._id}`, {
         //     creator_id: id
         // })
         //     .then(
-        axios.post("http://localhost:4000/api/msg/addMsgHim", {
+        axios.post(`${API_URL}/api/msg/addMsgHim`, {
             owner: id,
             msg: msg,
             opponent: profile._id,
             direction: 'come'
         })
             .then(
-                axios.post("http://localhost:4000/api/msg/addMsgMe", {
+                axios.post(`${API_URL}/api/msg/addMsgMe`, {
                     owner: profile._id,
                     msg: msg,
                     opponent: id,
                     direction: 'go'
                 })
                     .then(
-                        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${id}`, {
+                        axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${id}`, {
                             creator_id: profile._id
                         })
                             .then(
-                                axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${profile._id}`, {
+                                axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${profile._id}`, {
                                     creator_id: id
                                 })
                                     .then(res => {

@@ -3,6 +3,7 @@ import axios from 'axios';
 import JobItem from '../../common_common/JobItem';
 import Slider from "react-slick";
 import { Link } from 'react-router-dom'
+import { API_URL } from  '../../../config/api';
 
 function SliderBox() {
     const [jobList, setJobList] = useState([]);
@@ -11,7 +12,7 @@ function SliderBox() {
         getJoblist();
     }, []);
     const getJoblist = () => {
-        axios.get("http://localhost:4000/api/job/getAllJobs")
+        axios.get(`${API_URL}/api/job/getAllJobs`)
             .then(res => {
                 console.log(res.data);
                 setJobList(res.data)

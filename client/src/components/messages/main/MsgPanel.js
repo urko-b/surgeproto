@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Link } from 'react-router-dom'
 import MsgItem from './MsgItem';
+import { API_URL } from  '../../../config/api';
 
 function MsgPanel(props) {
     const msgList = props.msgList;
@@ -48,7 +49,7 @@ function MsgPanel(props) {
     }, []);
 
     // const getProfile = () => {
-    //     axios.get("http://localhost:4000/api/getProfile")
+    //     axios.get(`${API_URL}/api/getProfile")
     //         .then(res => {
     //             console.log(res.data);
     //             userContext.setProfile(res.data)
@@ -56,7 +57,7 @@ function MsgPanel(props) {
     // }
 
     const getUserProfile = async () => {
-        let response = await axios.get(`http://localhost:4000/api/userProfile/getUserProfile/${id}`, {
+        let response = await axios.get(`${API_URL}/api/userProfile/getUserProfile/${id}`, {
             id: id
         })
         let data = await response.data;
@@ -83,22 +84,22 @@ function MsgPanel(props) {
 
     const sendMsg = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:4000/api/msg/addMsgHim", {
+        await axios.post(`${API_URL}/api/msg/addMsgHim`, {
             owner: id,
             msg: msg,
             opponent: myId,
             direction: 'come'
         })
-        await axios.post("http://localhost:4000/api/msg/addMsgMe", {
+        await axios.post(`${API_URL}/api/msg/addMsgMe`, {
             owner: myId,
             msg: msg,
             opponent: id,
             direction: 'go'
         })
-        // await axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${myId}`, {
+        // await axios.post(`${API_URL}/api/userProfile/updateUserProfile/addConnection/${myId}`, {
         //     creator_id: id
         // })
-        // await axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${id}`, {
+        // await axios.post(`${API_URL}/api/userProfile/updateUserProfile/addConnection/${id}`, {
         //     creator_id: myId
         // })
         // sendMsgSucNotify();

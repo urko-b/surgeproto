@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Experience from './ExperiencePanel';
 import Education from './EducationPanel';
 import UserContext from '../../common/UserContext';
+import { API_URL } from  '../../../config/api';
 
 function Main(props) {
 
@@ -38,7 +39,7 @@ function Main(props) {
 
     const updateItem = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
             name: name,
             username: username,
             email: email,

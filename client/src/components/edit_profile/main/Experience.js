@@ -7,6 +7,7 @@ import UserContext from '../../common/UserContext';
 import classnames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import $ from 'jquery';
+import { API_URL } from  '../../../config/api';
 
 function Experience(props) {
     const userContext = useContext(UserContext);
@@ -32,7 +33,7 @@ function Experience(props) {
     const deleteItem = (e) => {
         e.preventDefault();
 
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/deleteExperience/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/deleteExperience/${id}`, {
             delId: delId
         })
             .then(() => {
@@ -47,7 +48,7 @@ function Experience(props) {
 
     const updateItem = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/updateExperience/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/updateExperience/${id}`, {
             updateId: updateId,
             title: title,
             company: subTitle,

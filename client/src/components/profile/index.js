@@ -5,6 +5,7 @@ import Nav from '../layout/Nav';
 import AsideLeft from './aside_left';
 import AsideRight from './aside_right';
 import Main from './main';
+import { API_URL } from  '../../../config/api';
 
 function Profile() {
     // const [profile, setProfile] = useState([]);
@@ -13,7 +14,7 @@ function Profile() {
     //     getProfile();
     // }, []);
     // const getProfile = () => {
-    //     axios.get("http://localhost:4000/api/getProfile")
+    //     axios.get(`${API_URL}/api/getProfile")
     //         .then(res => {
     //             console.log(res.data);
     //             setProfile(res.data)

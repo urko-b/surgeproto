@@ -5,6 +5,7 @@ import UserContext from '../../common/UserContext';
 import classnames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import $ from 'jquery';
+import { API_URL } from  '../../../config/api';
 
 function Education(props) {
     const userContext = useContext(UserContext);
@@ -23,7 +24,7 @@ function Education(props) {
     console.log('upis from');
     const deleteItem = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/deleteEducation/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/deleteEducation/${id}`, {
             delId: delId
         })
             .then(() => {
@@ -32,7 +33,7 @@ function Education(props) {
     }
     const updateItem = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/updateEducation/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/updateEducation/${id}`, {
             updateId: updateId,
             school: title,
             degree: subTitle,

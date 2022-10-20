@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Switch } from 'react-switch-input';
+import { API_URL } from  '../../../config/api';
 
 
 function GigTransfer(props) {
@@ -16,7 +17,7 @@ function GigTransfer(props) {
     }, [state])
 
     const updateGigTransferState = (e) => {
-        axios.post(`http://localhost:4000/api/gig_transfer/updateState/${id}`, {
+        axios.post(`${API_URL}/gig_transfer/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");
@@ -26,7 +27,7 @@ function GigTransfer(props) {
                 setContact('denied')
             }
             const id = props.gig_id;
-            axios.post(`http://localhost:4000/api/gig/updateGig/${id}`, {
+            axios.post(`${API_URL}/api/gig/updateGig/${id}`, {
                 contact: contact
             })
                 .then(res => {

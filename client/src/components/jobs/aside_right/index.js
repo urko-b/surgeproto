@@ -10,6 +10,7 @@ import PeopleBox from '../../common_common/PeopleBox';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from  '../../../config/api';
 
 function AsideRight() {
 
@@ -21,7 +22,7 @@ function AsideRight() {
     const adminId = '6331c7c5db563af609b6c175';
 
     const getProfile = () => {
-        axios.get("http://localhost:4000/api/getProfile")
+        axios.get(`${API_URL}/api/getProfile`)
             .then(res => {
                 console.log(res.data);
                 userContext.setProfile(res.data)
@@ -53,11 +54,11 @@ function AsideRight() {
 
         e.preventDefault();
 
-        await axios.post("http://localhost:4000/api/adminMailbox/addMsg", {
+        await axios.post(`${API_URL}/api/adminMailbox/addMsg`, {
             from: profile._id,
             msg: msg
         })
-        await axios.post("http://localhost:4000/api/msg/addMsgMe", {
+        await axios.post(`${API_URL}/api/msg/addMsgMe`, {
             owner: profile._id,
             msg: msg,
             opponent: adminId,
@@ -65,20 +66,20 @@ function AsideRight() {
         })
         sendMsgSucNotify();
         setMsg('');
-        await axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${profile._id}`, {
+        await axios.post(`${API_URL}/api/userProfile/updateUserProfile/addConnection/${profile._id}`, {
             creator_id: adminId
         })
-        await axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${adminId}`, {
+        await axios.post(`${API_URL}/api/userProfile/updateUserProfile/addConnection/${adminId}`, {
             creator_id: profile._id
         })
 
 
-        // axios.post("http://localhost:4000/api/adminMailbox/addMsg", {
+        // axios.post(`${API_URL}/api/adminMailbox/addMsg", {
         //     from: profile._id,
         //     msg: msg
         // })
         //     .then(
-        //         axios.post("http://localhost:4000/api/msg/addMsgMe", {
+        //         axios.post(`${API_URL}/api/msg/addMsgMe", {
         //             owner: profile._id,
         //             msg: msg,
         //             opponent: '6331c7c5db563af609b6c175',

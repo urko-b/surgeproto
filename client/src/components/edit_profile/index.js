@@ -7,6 +7,7 @@ import NavNonSerch from '../layout/NavNonserch';
 import AsideLeft from './aside_left';
 import Main from './main';
 import UserContext from '../common/UserContext';
+import { API_URL } from  '../../../config/api';
 
 function EditProfile() {
     const userContext = useContext(UserContext);
@@ -27,7 +28,7 @@ function EditProfile() {
     }, []);
 
     const getFormlist = () => {
-        axios.get("http://localhost:4000/api/profileForm/getAll")
+        axios.get(`${API_URL}/api/profileForm/getAll`)
             .then(res => {
                 console.log(res.data);
                 setFormList(res.data)

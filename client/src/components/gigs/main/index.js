@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 import GigItem from '../../common_common/GigItem';
+import { API_URL } from  '../../../config/api';
 
 function Main() {
     const [gigList, setGigList] = useState([]);
@@ -10,7 +11,7 @@ function Main() {
         getGiglist();
     }, []);
     const getGiglist = () => {
-        axios.get("http://localhost:4000/api/gig/getAllGigs")
+        axios.get(`${API_URL}/api/gig/getAllGigs`)
             .then(res => {
                 console.log(res.data);
                 setGigList(res.data)
@@ -24,7 +25,7 @@ function Main() {
     });
 
     // const deleteData = (id) => {
-    //     axios.get(`http://localhost:4000/gig/deleteJob/${id}`)
+    //     axios.get(`${API_URL}/gig/deleteJob/${id}`)
     //         .then(() => {
     //             getJoblist();
     //         })

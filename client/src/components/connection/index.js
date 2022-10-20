@@ -6,6 +6,7 @@ import UserContext from '../common/UserContext';
 import Nav from '../layout/Nav';
 import AsideRight from './aside_right';
 import Main from './main';
+import { API_URL } from  '../../../config/api';
 
 function Connection() {
 
@@ -22,7 +23,7 @@ function Connection() {
     }, []);
 
     const getProfile = async () => {
-        let response = await axios.get("http://localhost:4000/api/getProfile")
+        let response = await axios.get(`${API_URL}/api/getProfile`)
         let data = await response.data
         userContext.setProfile(data)
     }

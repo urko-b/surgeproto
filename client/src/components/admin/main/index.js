@@ -3,6 +3,7 @@ import axios from 'axios';
 import JobItem3 from '../../common_common/JobItem3';
 import GigItem3 from '../../common_common/GigItem3';
 import ProfileForm from './ProfileForm';
+import { API_URL } from  '../../../config/api';
 
 function Main() {
     const [jobList, setJobList] = useState([]);
@@ -25,7 +26,7 @@ function Main() {
 
 
     const getJoblist = () => {
-        axios.get("http://localhost:4000/api/job/getAllJobs")
+        axios.get(`${API_URL}/api/job/getAllJobs`)
             .then(res => {
                 console.log(res.data);
                 setJobList(res.data)
@@ -34,7 +35,7 @@ function Main() {
 
 
     const getGiglist = () => {
-        axios.get("http://localhost:4000/api/gig/getAllGigs")
+        axios.get(`${API_URL}/api/gig/getAllGigs`)
             .then(res => {
                 console.log(res.data);
                 setGigList(res.data)
@@ -42,7 +43,7 @@ function Main() {
     }
 
     const getFormlist = () => {
-        axios.get("http://localhost:4000/api/profileForm/getAll")
+        axios.get(`${API_URL}/api/profileForm/getAll`)
             .then(res => {
                 console.log(res.data);
                 setFormList(res.data)

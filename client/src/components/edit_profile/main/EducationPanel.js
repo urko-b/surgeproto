@@ -7,6 +7,7 @@ import UserContext from '../../common/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 import EducationBox from './EducationBox';
+import { API_URL } from  '../../../config/api';
 
 function Education(props) {
     const userContext = useContext(UserContext);
@@ -24,7 +25,7 @@ function Education(props) {
 
     // const updateItem = (e) => {
     //     e.preventDefault();
-    //     axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/${id}`, {
+    //     axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
     //         education.school: school,
     //         bio: bio,
     //         profile_sign: true
@@ -44,7 +45,7 @@ function Education(props) {
     const addItem = (e) => {
 
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addEducation/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/addEducation/${id}`, {
             school: school,
             degree: degree,
             fieldofstudy: fieldofstudy,

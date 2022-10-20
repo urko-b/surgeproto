@@ -8,6 +8,7 @@ import { Switch } from 'react-switch-input';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from  '../../../config/api';
 
 function GigItem3(props) {
     let navigate = useNavigate();
@@ -42,7 +43,7 @@ function GigItem3(props) {
     }, [state])
 
     const updateGigState = (e) => {
-        axios.post(`http://localhost:4000/api/gig/updateState/${id}`, {
+        axios.post(`${API_URL}/api/gig/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");
@@ -53,7 +54,7 @@ function GigItem3(props) {
     }
 
     const deleteGig = (e) => {
-        axios.get(`http://localhost:4000/api/gig/deleteGig/${id}`
+        axios.get(`${API_URL}/api/gig/deleteGig/${id}`
         ).then(() => {
             console.log("Deleted!");
             deleteGigNotify();

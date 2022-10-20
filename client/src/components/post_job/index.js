@@ -10,6 +10,8 @@ import Nav from '../layout/Nav';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from  '../../../config/api';
+
 function PostJob() {
 
     const userContext = useContext(UserContext);
@@ -36,7 +38,7 @@ function PostJob() {
 
 
     const getProfile = () => {
-        axios.get("http://localhost:4000/api/getProfile")
+        axios.get(`${API_URL}/api/getProfile`)
             .then(res => {
                 console.log(res.data);
                 userContext.setProfile(res.data)
@@ -54,7 +56,7 @@ function PostJob() {
     const addItem = (e) => {
 
         e.preventDefault();
-        axios.post("http://localhost:4000/api/job/addJob", {
+        axios.post(`${API_URL}/api/job/addJob`, {
             creator: creator,
             avatar: profile.avatar,
             username: profile.username,
@@ -76,7 +78,7 @@ function PostJob() {
     }
 
     const getJoblist = () => {
-        axios.get("http://localhost:4000/api/job/getAllJobs")
+        axios.get(`${API_URL}/api/job/getAllJobs`)
             .then(res => {
                 console.log(res.data);
                 setJobList(res.data)

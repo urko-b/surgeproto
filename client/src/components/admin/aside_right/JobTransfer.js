@@ -7,6 +7,7 @@ import * as web3 from '@solana/web3.js';
 import * as bs58 from "bs58";
 
 import * as buffer from "buffer";
+import { API_URL } from  '../../../config/api';
 
 const getProvider = async () => {
     if ("solana" in window) {
@@ -36,7 +37,7 @@ const JobTransfer = (props) => {
     }, [state])
 
     const updateJobTransferState = (e) => {
-        axios.post(`http://localhost:4000/api/job_transfer/updateState/${id}`, {
+        axios.post(`${API_URL}/api/job_transfer/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");
@@ -46,7 +47,7 @@ const JobTransfer = (props) => {
                 setContact('denied')
             }
             const id = props.job_id;
-            axios.post(`http://localhost:4000/api/job/updateJob/${id}`, {
+            axios.post(`${API_URL}/api/job/updateJob/${id}`, {
                 contact: contact
             })
                 .then(res => {

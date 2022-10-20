@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 import JobItem from '../../common_common/JobItem';
+import { API_URL } from  '../../../config/api';
 
 function Main() {
     const [jobList, setJobList] = useState([]);
@@ -10,7 +11,7 @@ function Main() {
         getJoblist();
     }, []);
     const getJoblist = () => {
-        axios.get("http://localhost:4000/api/job/getAllJobs")
+        axios.get(`${API_URL}/api/job/getAllJobs`)
             .then(res => {
                 console.log(res.data);
                 setJobList(res.data)
@@ -24,7 +25,7 @@ function Main() {
     }, []);
 
     // const deleteData = (id) => {
-    //     axios.get(`http://localhost:4000/job/deleteJob/${id}`)
+    //     axios.get(`${API_URL}/job/deleteJob/${id}`)
     //         .then(() => {
     //             getJoblist();
     //         })

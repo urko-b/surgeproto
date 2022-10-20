@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import UserContext from '../common/UserContext';
+import { API_URL } from  '../../../config/api';
 
 function GigItem(props) {
     const userContext = useContext(UserContext);
@@ -16,7 +17,7 @@ function GigItem(props) {
             alert("Your wallet address does not exist!");
         } else {
             e.preventDefault();
-            axios.post("http://localhost:4000/api/gig_transfer/addInfo", {
+            axios.post(`${API_URL}/api/gig_transfer/addInfo`, {
                 fromAddress: profile.walletAddress,
                 fromUsername: profile.username,
                 toAddress: props.walletAddress,
@@ -29,7 +30,7 @@ function GigItem(props) {
                     alert('Transfer Info was added!');
 
                     const id = props.id;
-                    axios.post(`http://localhost:4000/api/gig/updateGig/${id}`, {
+                    axios.post(`${API_URL}/api/gig/updateGig/${id}`, {
                         clientUsername: profile.username,
                         clientAvatar: profile.avatar,
                         contact: 'pending'

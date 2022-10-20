@@ -7,6 +7,7 @@ import UserContext from '../../common/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 import ExperienceBox from "./ExperienceBox";
+import { API_URL } from  '../../../config/api';
 
 function Experience(props) {
     const userContext = useContext(UserContext);
@@ -31,7 +32,7 @@ function Experience(props) {
     const addItem = (e) => {
 
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addExperience/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/addExperience/${id}`, {
             title: title,
             company: company,
             location: location,

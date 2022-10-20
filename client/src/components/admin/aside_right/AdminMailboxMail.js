@@ -6,6 +6,7 @@ import UserContext from '../../common/UserContext';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from  '../../../config/api';
 
 function AdminMailboxMail(props) {
 
@@ -21,7 +22,7 @@ function AdminMailboxMail(props) {
 
 
     const getProfile = () => {
-        axios.get("http://localhost:4000/api/getProfile")
+        axios.get(`${API_URL}/api/getProfile`)
             .then(res => {
                 console.log(res.data);
                 userContext.setProfile(res.data)
@@ -51,7 +52,7 @@ function AdminMailboxMail(props) {
         }, 5000);
     });
     const getUserProfile = () => {
-        axios.get(`http://localhost:4000/api/userProfile/getUserProfile/${id}`, {
+        axios.get(`${API_URL}/userProfile/getUserProfile/${id}`, {
             id: id
         })
             .then(res => {
@@ -63,7 +64,7 @@ function AdminMailboxMail(props) {
 
 
     const deleteMsg = (e) => {
-        axios.get(`http://localhost:4000/api/adminMailbox/deleteMsg/${del_id}`
+        axios.get(`${API_URL}/adminMailbox/deleteMsg/${del_id}`
         ).then(() => {
             deleteMsgNotify();
         })
@@ -89,25 +90,25 @@ function AdminMailboxMail(props) {
     const sendMsg = (e) => {
 
         e.preventDefault();
-        axios.post("http://localhost:4000/api/msg/addMsgHim", {
+        axios.post(`${API_URL}/api/msg/addMsgHim`, {
             owner: id,
             msg: msg,
             opponent: profile._id,
             direction: 'come'
         })
             .then(
-                axios.post("http://localhost:4000/api/msg/addMsgMe", {
+                axios.post(`${API_URL}/api/msg/addMsgMe`, {
                     owner: profile._id,
                     msg: msg,
                     opponent: id,
                     direction: 'go'
                 })
                     .then(
-                        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${profile._id}`, {
+                        axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${profile._id}`, {
                             creator_id: id
                         })
                             .then(
-                                axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/addConnection/${id}`, {
+                                axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${id}`, {
                                     creator_id: profile._id
                                 })
                                     .then(res => {

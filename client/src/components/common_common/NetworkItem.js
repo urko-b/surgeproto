@@ -6,6 +6,7 @@ import UserContext from '../common/UserContext';
 import classnames from 'classnames';
 
 import { Link } from 'react-router-dom'
+import { API_URL } from  '../../../config/api';
 
 function NetworkItem(props) {
     console.log('this is ');
@@ -22,7 +23,7 @@ function NetworkItem(props) {
     }, []);
 
     const getUserProfile = async () => {
-        let response = await axios.get(`http://localhost:4000/api/userProfile/getUserProfile/${id}`, {
+        let response = await axios.get(`${API_URL}/api/userProfile/getUserProfile/${id}`, {
             id: id
         })
         let data = await response.data;

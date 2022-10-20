@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import AuthService from '../../services/auth';
 import { useNavigate } from "react-router-dom";
 import UserContext from '../common/UserContext';
+import { API_URL } from  '../../../config/api';
 
 function NavNonSerch() {
     const userContext = useContext(UserContext);
@@ -28,7 +29,7 @@ function NavNonSerch() {
                     const walletAddress = response.publicKey
                     alert(walletAddress);
                     // setWalletAddress(response.publicKey.toString());
-                    axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/${id}`, {
+                    axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
                         walletAddress: walletAddress
                     }).then(() => {
                         console.log("Wallet Address was Updated!");

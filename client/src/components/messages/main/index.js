@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import UserContext from '../../common/UserContext';
 
 import Messaging from './Messaging';
+import { API_URL } from  '../../../config/api';
 
 function Main() {
 
@@ -15,7 +16,7 @@ function Main() {
     }, [])
 
     const getProfile = async () => {
-        let response = await axios.get("http://localhost:4000/api/getProfile")
+        let response = await axios.get(`${API_URL}/api/getProfile`)
         let data = await response.data;
         userContext.setProfile(data);
     }

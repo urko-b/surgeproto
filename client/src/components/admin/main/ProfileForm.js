@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import axios from 'axios';
 import { Switch } from 'react-switch-input';
+import { API_URL } from  '../../../config/api';
 
 function ProfileForm(props) {
 
@@ -16,7 +17,7 @@ function ProfileForm(props) {
     }, [state])
 
     const updateProfileFormState = (e) => {
-        axios.post(`http://localhost:4000/api/profileForm/updateState/${id}`, {
+        axios.post(`${API_URL}/api/profileForm/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom'
 import UserContext from '../../common/UserContext';
+import { API_URL } from  '../../../config/api';
 
 
 function AsideLeft(props) {
@@ -44,7 +45,7 @@ function AsideLeft(props) {
     // }, [avatar]);
     const updateSocial = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
             social: {
                 instagram: instagram,
                 twitter: twitter,
@@ -63,7 +64,7 @@ function AsideLeft(props) {
     }
     const updateItem = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
             about: about,
             bio: bio,
             profile_sign: true
@@ -77,7 +78,7 @@ function AsideLeft(props) {
     }
     const updateAvatar = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:4000/api/userProfile/updateUserProfile/${id}`, {
+        axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
             avatar: avatar
         }).then(() => {
             alert("User avatar was updated!");

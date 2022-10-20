@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import Person from './Person';
 import MsgPanel from './MsgPanel';
+import { API_URL } from  '../../../config/api';
 
 function Messaging(props) {
 
@@ -51,7 +52,7 @@ function Messaging(props) {
     }, []);
 
     // const getProfile = () => {
-    //     axios.get("http://localhost:4000/api/getProfile")
+    //     axios.get(`${API_URL}/api/getProfile")
     //         .then(res => {
     //             console.log(res.data);
     //             userContext.setProfile(res.data)
@@ -64,7 +65,7 @@ function Messaging(props) {
 
     const getMsglist = async () => {
         // console.log("thanks")
-        let response = await axios.get(`http://localhost:4000/api/msg/getAllMine/${id}`)
+        let response = await axios.get(`${API_URL}/api/msg/getAllMine/${id}`)
         let data = response.data
         // console.log('this is response data');
         // console.log(">>>>>>>>>>>", data);

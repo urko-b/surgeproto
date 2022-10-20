@@ -8,6 +8,7 @@ import { Switch } from 'react-switch-input';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from  '../../../config/api';
 
 function JobItem3(props) {
     let navigate = useNavigate();
@@ -42,7 +43,7 @@ function JobItem3(props) {
     }, [state])
 
     const updateJobState = (e) => {
-        axios.post(`http://localhost:4000/api/job/updateState/${id}`, {
+        axios.post(`${API_URL}/api/job/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");
@@ -53,7 +54,7 @@ function JobItem3(props) {
     }
 
     const deleteJob = (e) => {
-        axios.get(`http://localhost:4000/api/job/deleteJob/${id}`
+        axios.get(`${API_URL}/api/job/deleteJob/${id}`
         ).then(() => {
             deleteJobNotify();
         })

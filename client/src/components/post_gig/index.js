@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import JobItem from '../common_common/JobItem';
 
 import Nav from '../layout/Nav';
+import { API_URL } from  '../../../config/api';
 
 function PostGig() {
 
@@ -23,7 +24,7 @@ function PostGig() {
     const [price, setprice] = useState('');
 
     const getProfile = () => {
-        axios.get("http://localhost:4000/api/getProfile")
+        axios.get(`${API_URL}/api/getProfile`)
             .then(res => {
                 console.log(res.data);
                 userContext.setProfile(res.data)
@@ -45,7 +46,7 @@ function PostGig() {
     const addItem = (e) => {
 
         e.preventDefault();
-        axios.post("http://localhost:4000/api/gig/addGig", {
+        axios.post(`${API_URL}/api/gig/addGig`, {
             creator: creator,
             avatar: profile.avatar,
             username: profile.username,
@@ -66,7 +67,7 @@ function PostGig() {
             })
     }
     const getGiglist = () => {
-        axios.get("http://localhost:4000/api/gig/getAllGigs")
+        axios.get(`${API_URL}/api/gig/getAllGigs`)
             .then(res => {
                 console.log(res.data);
                 setGigList(res.data)

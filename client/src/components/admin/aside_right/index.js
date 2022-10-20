@@ -5,6 +5,7 @@ import ProfileForm from '../main/ProfileForm';
 import JobTransfer from './JobTransfer';
 import GigTransfer from './GigTransfer';
 import AdminMailboxMail from './AdminMailboxMail';
+import { API_URL } from  '../../../config/api';
 
 function AsideRight() {
     const [jobTransferList, setJobTransferList] = useState([]);
@@ -27,7 +28,7 @@ function AsideRight() {
 
 
     const getJobTransferList = () => {
-        axios.get("http://localhost:4000/api/job_transfer/getAll")
+        axios.get(`${API_URL}/api/job_transfer/getAll`)
             .then(res => {
                 console.log(res.data);
                 setJobTransferList(res.data)
@@ -35,7 +36,7 @@ function AsideRight() {
     }
 
     const getGigTransferList = () => {
-        axios.get("http://localhost:4000/api/gig_transfer/getAll")
+        axios.get(`${API_URL}/api/gig_transfer/getAll`)
             .then(res => {
                 console.log(res.data);
                 setGigTransferList(res.data)
@@ -43,7 +44,7 @@ function AsideRight() {
     }
 
     const getAdminMailboxList = () => {
-        axios.get("http://localhost:4000/api/adminMailbox/getAll")
+        axios.get(`${API_URL}/api/adminMailbox/getAll`)
             .then(res => {
                 console.log(res.data);
                 setAdminMailboxList(res.data)

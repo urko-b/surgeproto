@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import UserContext from '../common/UserContext';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from  '../../../config/api';
 // import { Link } from 'react-router-dom'
 
 function PostGigBox() {
@@ -13,7 +14,7 @@ function PostGigBox() {
 
     const postGig = () => {
         // e.preventDefault();
-        axios.get("http://localhost:4000/api/getProfile")
+        axios.get(`${API_URL}/api/getProfile`)
             .then(res => {
                 const profile = res.data;
                 if (profile._id == null || profile._id == undefined || profile.walletAddress == null || profile.walletAddress == undefined || profile.walletAddress.length < 10) {
