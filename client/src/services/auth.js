@@ -11,7 +11,7 @@ const config = {
 };
 
 const register = async (name, username, email, password) => {
-  let res = await axios.post(API_URL + "register", {
+  let res = await axios.post(API_URL + "/register", {
     name,
     username,
     email,
