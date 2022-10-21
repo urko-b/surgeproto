@@ -21,7 +21,7 @@ const register = async (name, username, email, password) => {
 };
 
 const login = async (email, password) => {
-  let res = await axios.post(API_URL + "login", { email, password }, config)
+  let res = await axios.post(API_URL + "/login", { email, password }, config)
     .then(res => {
       let token = res.data.token;
       localStorage.setItem("token", token);
