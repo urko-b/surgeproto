@@ -27,7 +27,7 @@ export default function Admin() {
     //     getProfile();
     // }, []);
     // const getProfile = () => {
-    //     axios.get(`${API_URL}/api/getProfile")
+    //     axios.get(`${API_URL}/getProfile")
     //         .then(res => {
     //             console.log(res.data);
     //             userContext.setProfile(res.data)

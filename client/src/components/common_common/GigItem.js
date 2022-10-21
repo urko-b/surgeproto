@@ -17,7 +17,7 @@ function GigItem(props) {
             alert("Your wallet address does not exist!");
         } else {
             e.preventDefault();
-            axios.post(`${API_URL}/api/gig_transfer/addInfo`, {
+            axios.post(`${API_URL}/gig_transfer/addInfo`, {
                 fromAddress: profile.walletAddress,
                 fromUsername: profile.username,
                 toAddress: props.walletAddress,
@@ -30,7 +30,7 @@ function GigItem(props) {
                     alert('Transfer Info was added!');
 
                     const id = props.id;
-                    axios.post(`${API_URL}/api/gig/updateGig/${id}`, {
+                    axios.post(`${API_URL}/gig/updateGig/${id}`, {
                         clientUsername: profile.username,
                         clientAvatar: profile.avatar,
                         contact: 'pending'

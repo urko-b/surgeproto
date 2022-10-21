@@ -20,7 +20,7 @@ function JobProfile(props) {
     }, []);
 
     const getJobProfile = () => {
-        axios.get(`${API_URL}/api/job/getJobProfile/${id}`, {
+        axios.get(`${API_URL}/job/getJobProfile/${id}`, {
             id: id
         })
             .then(res => {

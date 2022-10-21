@@ -29,7 +29,7 @@ function GigProfile(props) {
     }, []);
 
     const getGigProfile = () => {
-        axios.get(`${API_URL}/api/gig/getGigProfile/${id}`, {
+        axios.get(`${API_URL}/gig/getGigProfile/${id}`, {
             id: id
         })
             .then(res => {

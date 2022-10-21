@@ -11,7 +11,7 @@ function Main() {
         getJoblist();
     }, []);
     const getJoblist = () => {
-        axios.get(`${API_URL}/api/job/getAllJobs`)
+        axios.get(`${API_URL}/job/getAllJobs`)
             .then(res => {
                 console.log(res.data);
                 setJobList(res.data)

@@ -22,7 +22,7 @@ function AdminMailboxMail(props) {
 
 
     const getProfile = () => {
-        axios.get(`${API_URL}/api/getProfile`)
+        axios.get(`${API_URL}/getProfile`)
             .then(res => {
                 console.log(res.data);
                 userContext.setProfile(res.data)
@@ -90,14 +90,14 @@ function AdminMailboxMail(props) {
     const sendMsg = (e) => {
 
         e.preventDefault();
-        axios.post(`${API_URL}/api/msg/addMsgHim`, {
+        axios.post(`${API_URL}/msg/addMsgHim`, {
             owner: id,
             msg: msg,
             opponent: profile._id,
             direction: 'come'
         })
             .then(
-                axios.post(`${API_URL}/api/msg/addMsgMe`, {
+                axios.post(`${API_URL}/msg/addMsgMe`, {
                     owner: profile._id,
                     msg: msg,
                     opponent: id,

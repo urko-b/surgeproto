@@ -52,7 +52,7 @@ function Messaging(props) {
     }, []);
 
     // const getProfile = () => {
-    //     axios.get(`${API_URL}/api/getProfile")
+    //     axios.get(`${API_URL}/getProfile")
     //         .then(res => {
     //             console.log(res.data);
     //             userContext.setProfile(res.data)
@@ -65,7 +65,7 @@ function Messaging(props) {
 
     const getMsglist = async () => {
         // console.log("thanks")
-        let response = await axios.get(`${API_URL}/api/msg/getAllMine/${id}`)
+        let response = await axios.get(`${API_URL}/msg/getAllMine/${id}`)
         let data = response.data
         // console.log('this is response data');
         // console.log(">>>>>>>>>>>", data);

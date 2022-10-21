@@ -11,7 +11,7 @@ function Main() {
         getGiglist();
     }, []);
     const getGiglist = () => {
-        axios.get(`${API_URL}/api/gig/getAllGigs`)
+        axios.get(`${API_URL}/gig/getAllGigs`)
             .then(res => {
                 console.log(res.data);
                 setGigList(res.data)

@@ -39,7 +39,7 @@ function Main(props) {
 
     const updateItem = (e) => {
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/${id}`, {
             name: name,
             username: username,
             email: email,

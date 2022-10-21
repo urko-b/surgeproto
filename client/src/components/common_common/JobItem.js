@@ -157,7 +157,7 @@ function JobItem(props) {
                 alert("Your wallet address does not exist!");
             } else {
                 e.preventDefault();
-                axios.post(`${API_URL}/api/job_transfer/addInfo`, {
+                axios.post(`${API_URL}/job_transfer/addInfo`, {
                     fromAddress: profile.walletAddress,
                     fromUsername: profile.username,
                     toAddress: props.walletAddress,
@@ -213,14 +213,14 @@ function JobItem(props) {
         //     creator_id: id
         // })
         //     .then(
-        axios.post(`${API_URL}/api/msg/addMsgHim`, {
+        axios.post(`${API_URL}/msg/addMsgHim`, {
             owner: id,
             msg: msg,
             opponent: profile._id,
             direction: 'come'
         })
             .then(
-                axios.post(`${API_URL}/api/msg/addMsgMe`, {
+                axios.post(`${API_URL}/msg/addMsgMe`, {
                     owner: profile._id,
                     msg: msg,
                     opponent: id,

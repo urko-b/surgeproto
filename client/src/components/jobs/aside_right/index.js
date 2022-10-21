@@ -22,7 +22,7 @@ function AsideRight() {
     const adminId = '6331c7c5db563af609b6c175';
 
     const getProfile = () => {
-        axios.get(`${API_URL}/api/getProfile`)
+        axios.get(`${API_URL}/getProfile`)
             .then(res => {
                 console.log(res.data);
                 userContext.setProfile(res.data)
@@ -54,11 +54,11 @@ function AsideRight() {
 
         e.preventDefault();
 
-        await axios.post(`${API_URL}/api/adminMailbox/addMsg`, {
+        await axios.post(`${API_URL}/adminMailbox/addMsg`, {
             from: profile._id,
             msg: msg
         })
-        await axios.post(`${API_URL}/api/msg/addMsgMe`, {
+        await axios.post(`${API_URL}/msg/addMsgMe`, {
             owner: profile._id,
             msg: msg,
             opponent: adminId,
@@ -66,20 +66,20 @@ function AsideRight() {
         })
         sendMsgSucNotify();
         setMsg('');
-        await axios.post(`${API_URL}/api/userProfile/updateUserProfile/addConnection/${profile._id}`, {
+        await axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${profile._id}`, {
             creator_id: adminId
         })
-        await axios.post(`${API_URL}/api/userProfile/updateUserProfile/addConnection/${adminId}`, {
+        await axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${adminId}`, {
             creator_id: profile._id
         })
 
 
-        // axios.post(`${API_URL}/api/adminMailbox/addMsg", {
+        // axios.post(`${API_URL}/adminMailbox/addMsg", {
         //     from: profile._id,
         //     msg: msg
         // })
         //     .then(
-        //         axios.post(`${API_URL}/api/msg/addMsgMe", {
+        //         axios.post(`${API_URL}/msg/addMsgMe", {
         //             owner: profile._id,
         //             msg: msg,
         //             opponent: '6331c7c5db563af609b6c175',

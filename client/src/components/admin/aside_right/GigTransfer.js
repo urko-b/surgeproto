@@ -27,7 +27,7 @@ function GigTransfer(props) {
                 setContact('denied')
             }
             const id = props.gig_id;
-            axios.post(`${API_URL}/api/gig/updateGig/${id}`, {
+            axios.post(`${API_URL}/gig/updateGig/${id}`, {
                 contact: contact
             })
                 .then(res => {

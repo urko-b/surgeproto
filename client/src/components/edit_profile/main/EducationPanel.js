@@ -25,7 +25,7 @@ function Education(props) {
 
     // const updateItem = (e) => {
     //     e.preventDefault();
-    //     axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
+    //     axios.post(`${API_URL}/userProfile/updateUserProfile/${id}`, {
     //         education.school: school,
     //         bio: bio,
     //         profile_sign: true
@@ -45,7 +45,7 @@ function Education(props) {
     const addItem = (e) => {
 
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/addEducation/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/addEducation/${id}`, {
             school: school,
             degree: degree,
             fieldofstudy: fieldofstudy,

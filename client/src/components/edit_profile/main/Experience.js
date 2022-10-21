@@ -33,7 +33,7 @@ function Experience(props) {
     const deleteItem = (e) => {
         e.preventDefault();
 
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/deleteExperience/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/deleteExperience/${id}`, {
             delId: delId
         })
             .then(() => {
@@ -48,7 +48,7 @@ function Experience(props) {
 
     const updateItem = (e) => {
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/updateExperience/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/updateExperience/${id}`, {
             updateId: updateId,
             title: title,
             company: subTitle,

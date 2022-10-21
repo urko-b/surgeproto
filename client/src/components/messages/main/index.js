@@ -16,7 +16,7 @@ function Main() {
     }, [])
 
     const getProfile = async () => {
-        let response = await axios.get(`${API_URL}/api/getProfile`)
+        let response = await axios.get(`${API_URL}/getProfile`)
         let data = await response.data;
         userContext.setProfile(data);
     }

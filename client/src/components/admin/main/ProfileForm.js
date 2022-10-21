@@ -17,7 +17,7 @@ function ProfileForm(props) {
     }, [state])
 
     const updateProfileFormState = (e) => {
-        axios.post(`${API_URL}/api/profileForm/updateState/${id}`, {
+        axios.post(`${API_URL}/profileForm/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");

@@ -35,7 +35,7 @@ function Nav() {
                     const walletAddress = response.publicKey
                     alert(walletAddress);
                     // setWalletAddress(response.publicKey.toString());
-                    axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
+                    axios.post(`${API_URL}/userProfile/updateUserProfile/${id}`, {
                         walletAddress: walletAddress
                     }).then(() => {
                         console.log("Wallet Address was Updated!");

@@ -43,7 +43,7 @@ function JobItem3(props) {
     }, [state])
 
     const updateJobState = (e) => {
-        axios.post(`${API_URL}/api/job/updateState/${id}`, {
+        axios.post(`${API_URL}/job/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");
@@ -54,7 +54,7 @@ function JobItem3(props) {
     }
 
     const deleteJob = (e) => {
-        axios.get(`${API_URL}/api/job/deleteJob/${id}`
+        axios.get(`${API_URL}/job/deleteJob/${id}`
         ).then(() => {
             deleteJobNotify();
         })

@@ -45,7 +45,7 @@ function AsideLeft(props) {
     // }, [avatar]);
     const updateSocial = (e) => {
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/${id}`, {
             social: {
                 instagram: instagram,
                 twitter: twitter,
@@ -64,7 +64,7 @@ function AsideLeft(props) {
     }
     const updateItem = (e) => {
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/${id}`, {
             about: about,
             bio: bio,
             profile_sign: true
@@ -78,7 +78,7 @@ function AsideLeft(props) {
     }
     const updateAvatar = (e) => {
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/${id}`, {
             avatar: avatar
         }).then(() => {
             alert("User avatar was updated!");

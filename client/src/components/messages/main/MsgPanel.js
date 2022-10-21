@@ -49,7 +49,7 @@ function MsgPanel(props) {
     }, []);
 
     // const getProfile = () => {
-    //     axios.get(`${API_URL}/api/getProfile")
+    //     axios.get(`${API_URL}/getProfile")
     //         .then(res => {
     //             console.log(res.data);
     //             userContext.setProfile(res.data)
@@ -57,7 +57,7 @@ function MsgPanel(props) {
     // }
 
     const getUserProfile = async () => {
-        let response = await axios.get(`${API_URL}/api/userProfile/getUserProfile/${id}`, {
+        let response = await axios.get(`${API_URL}/userProfile/getUserProfile/${id}`, {
             id: id
         })
         let data = await response.data;
@@ -84,22 +84,22 @@ function MsgPanel(props) {
 
     const sendMsg = async (e) => {
         e.preventDefault();
-        await axios.post(`${API_URL}/api/msg/addMsgHim`, {
+        await axios.post(`${API_URL}/msg/addMsgHim`, {
             owner: id,
             msg: msg,
             opponent: myId,
             direction: 'come'
         })
-        await axios.post(`${API_URL}/api/msg/addMsgMe`, {
+        await axios.post(`${API_URL}/msg/addMsgMe`, {
             owner: myId,
             msg: msg,
             opponent: id,
             direction: 'go'
         })
-        // await axios.post(`${API_URL}/api/userProfile/updateUserProfile/addConnection/${myId}`, {
+        // await axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${myId}`, {
         //     creator_id: id
         // })
-        // await axios.post(`${API_URL}/api/userProfile/updateUserProfile/addConnection/${id}`, {
+        // await axios.post(`${API_URL}/userProfile/updateUserProfile/addConnection/${id}`, {
         //     creator_id: myId
         // })
         // sendMsgSucNotify();

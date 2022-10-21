@@ -26,7 +26,7 @@ function Main() {
 
 
     const getJoblist = () => {
-        axios.get(`${API_URL}/api/job/getAllJobs`)
+        axios.get(`${API_URL}/job/getAllJobs`)
             .then(res => {
                 console.log(res.data);
                 setJobList(res.data)
@@ -35,7 +35,7 @@ function Main() {
 
 
     const getGiglist = () => {
-        axios.get(`${API_URL}/api/gig/getAllGigs`)
+        axios.get(`${API_URL}/gig/getAllGigs`)
             .then(res => {
                 console.log(res.data);
                 setGigList(res.data)
@@ -43,7 +43,7 @@ function Main() {
     }
 
     const getFormlist = () => {
-        axios.get(`${API_URL}/api/profileForm/getAll`)
+        axios.get(`${API_URL}/profileForm/getAll`)
             .then(res => {
                 console.log(res.data);
                 setFormList(res.data)

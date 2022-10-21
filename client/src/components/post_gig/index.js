@@ -24,7 +24,7 @@ function PostGig() {
     const [price, setprice] = useState('');
 
     const getProfile = () => {
-        axios.get(`${API_URL}/api/getProfile`)
+        axios.get(`${API_URL}/getProfile`)
             .then(res => {
                 console.log(res.data);
                 userContext.setProfile(res.data)
@@ -46,7 +46,7 @@ function PostGig() {
     const addItem = (e) => {
 
         e.preventDefault();
-        axios.post(`${API_URL}/api/gig/addGig`, {
+        axios.post(`${API_URL}/gig/addGig`, {
             creator: creator,
             avatar: profile.avatar,
             username: profile.username,
@@ -67,7 +67,7 @@ function PostGig() {
             })
     }
     const getGiglist = () => {
-        axios.get(`${API_URL}/api/gig/getAllGigs`)
+        axios.get(`${API_URL}/gig/getAllGigs`)
             .then(res => {
                 console.log(res.data);
                 setGigList(res.data)

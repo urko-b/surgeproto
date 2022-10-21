@@ -37,7 +37,7 @@ const JobTransfer = (props) => {
     }, [state])
 
     const updateJobTransferState = (e) => {
-        axios.post(`${API_URL}/api/job_transfer/updateState/${id}`, {
+        axios.post(`${API_URL}/job_transfer/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");
@@ -47,7 +47,7 @@ const JobTransfer = (props) => {
                 setContact('denied')
             }
             const id = props.job_id;
-            axios.post(`${API_URL}/api/job/updateJob/${id}`, {
+            axios.post(`${API_URL}/job/updateJob/${id}`, {
                 contact: contact
             })
                 .then(res => {

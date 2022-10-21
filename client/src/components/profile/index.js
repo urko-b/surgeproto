@@ -14,7 +14,7 @@ function Profile() {
     //     getProfile();
     // }, []);
     // const getProfile = () => {
-    //     axios.get(`${API_URL}/api/getProfile")
+    //     axios.get(`${API_URL}/getProfile")
     //         .then(res => {
     //             console.log(res.data);
     //             setProfile(res.data)

@@ -29,7 +29,7 @@ function Person(props) {
 
 
     const getUserProfile = async () => {
-        let response = await axios.get(`${API_URL}/api/userProfile/getUserProfile/${id}`, {
+        let response = await axios.get(`${API_URL}/userProfile/getUserProfile/${id}`, {
             id: id
         })
         let data = await response.data;

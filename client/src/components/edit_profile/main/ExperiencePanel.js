@@ -32,7 +32,7 @@ function Experience(props) {
     const addItem = (e) => {
 
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/addExperience/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/addExperience/${id}`, {
             title: title,
             company: company,
             location: location,

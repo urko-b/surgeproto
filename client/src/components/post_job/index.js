@@ -38,7 +38,7 @@ function PostJob() {
 
 
     const getProfile = () => {
-        axios.get(`${API_URL}/api/getProfile`)
+        axios.get(`${API_URL}/getProfile`)
             .then(res => {
                 console.log(res.data);
                 userContext.setProfile(res.data)
@@ -56,7 +56,7 @@ function PostJob() {
     const addItem = (e) => {
 
         e.preventDefault();
-        axios.post(`${API_URL}/api/job/addJob`, {
+        axios.post(`${API_URL}/job/addJob`, {
             creator: creator,
             avatar: profile.avatar,
             username: profile.username,
@@ -78,7 +78,7 @@ function PostJob() {
     }
 
     const getJoblist = () => {
-        axios.get(`${API_URL}/api/job/getAllJobs`)
+        axios.get(`${API_URL}/job/getAllJobs`)
             .then(res => {
                 console.log(res.data);
                 setJobList(res.data)

@@ -28,7 +28,7 @@ function EditProfile() {
     }, []);
 
     const getFormlist = () => {
-        axios.get(`${API_URL}/api/profileForm/getAll`)
+        axios.get(`${API_URL}/profileForm/getAll`)
             .then(res => {
                 console.log(res.data);
                 setFormList(res.data)

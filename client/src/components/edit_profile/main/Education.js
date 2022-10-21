@@ -24,7 +24,7 @@ function Education(props) {
     console.log('upis from');
     const deleteItem = (e) => {
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/deleteEducation/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/deleteEducation/${id}`, {
             delId: delId
         })
             .then(() => {
@@ -33,7 +33,7 @@ function Education(props) {
     }
     const updateItem = (e) => {
         e.preventDefault();
-        axios.post(`${API_URL}/api/userProfile/updateUserProfile/updateEducation/${id}`, {
+        axios.post(`${API_URL}/userProfile/updateUserProfile/updateEducation/${id}`, {
             updateId: updateId,
             school: title,
             degree: subTitle,

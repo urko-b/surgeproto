@@ -43,7 +43,7 @@ function GigItem3(props) {
     }, [state])
 
     const updateGigState = (e) => {
-        axios.post(`${API_URL}/api/gig/updateState/${id}`, {
+        axios.post(`${API_URL}/gig/updateState/${id}`, {
             state: state,
         }).then(() => {
             console.log("Updated!");
@@ -54,7 +54,7 @@ function GigItem3(props) {
     }
 
     const deleteGig = (e) => {
-        axios.get(`${API_URL}/api/gig/deleteGig/${id}`
+        axios.get(`${API_URL}/gig/deleteGig/${id}`
         ).then(() => {
             console.log("Deleted!");
             deleteGigNotify();

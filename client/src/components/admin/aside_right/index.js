@@ -28,7 +28,7 @@ function AsideRight() {
 
 
     const getJobTransferList = () => {
-        axios.get(`${API_URL}/api/job_transfer/getAll`)
+        axios.get(`${API_URL}/job_transfer/getAll`)
             .then(res => {
                 console.log(res.data);
                 setJobTransferList(res.data)
@@ -36,7 +36,7 @@ function AsideRight() {
     }
 
     const getGigTransferList = () => {
-        axios.get(`${API_URL}/api/gig_transfer/getAll`)
+        axios.get(`${API_URL}/gig_transfer/getAll`)
             .then(res => {
                 console.log(res.data);
                 setGigTransferList(res.data)
@@ -44,7 +44,7 @@ function AsideRight() {
     }
 
     const getAdminMailboxList = () => {
-        axios.get(`${API_URL}/api/adminMailbox/getAll`)
+        axios.get(`${API_URL}/adminMailbox/getAll`)
             .then(res => {
                 console.log(res.data);
                 setAdminMailboxList(res.data)

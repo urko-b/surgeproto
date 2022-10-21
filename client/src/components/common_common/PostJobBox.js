@@ -14,7 +14,7 @@ function PostJobBox() {
 
     const postJob = () => {
         // e.preventDefault();
-        axios.get(`${API_URL}/api/getProfile`)
+        axios.get(`${API_URL}/getProfile`)
             .then(res => {
                 const profile = res.data;
                 if (profile._id == null || profile._id == undefined || profile.walletAddress == null || profile.walletAddress == undefined || profile.walletAddress.length < 10) {
